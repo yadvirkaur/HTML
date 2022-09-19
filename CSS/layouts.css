@@ -1,0 +1,184 @@
+html {
+  /*root element*/
+  font-size: 62.5%; /*62.5% of 16px= 10px*/
+}
+
+body {
+  height: 200vh;
+  margin: 10px;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+.para {
+  padding: 5px;
+  border: 2px solid yellow;
+  margin: 5px;
+}
+
+.box {
+  width: 50px;
+  height: 50px;
+  background-color: gold;
+  display: inline-block;
+}
+
+.box::before {
+  content: "hello";
+}
+
+.overflow {
+  border: 3px solid gold;
+  /* width: 50%; if body element takes 100% of page, this will cover 50% of body element*/
+  width: 20rem; /* 15 times the font size of root element witch is 16px by default*/
+  height: 10vh; /*height according to viewport, and it is vw for width*/
+  overflow: auto;
+}
+
+.boxes {
+  border: 3px solid lightgrey;
+
+  position: relative;
+}
+
+.boxy {
+  width: 5rem;
+  height: 5rem;
+}
+.box1 {
+  background-color: gold;
+  position: absolute; /*relative to the parent*/
+  bottom: 1rem;
+  right: 0;
+}
+.box2 {
+  background-color: tomato;
+  position: relative; /*relative to the elements normal position*/
+  left: 4rem;
+  top: 1rem;
+  z-index: -1;
+}
+.box3 {
+  background-color: dodgerblue;
+  position: fixed; /*relative to the viewport*/
+  bottom: 0;
+  left: 2rem;
+  right: 2rem;
+  width: auto;
+}
+
+.tweet {
+  border: 3px solid lightgrey;
+}
+.avatar {
+  width: 5rem;
+  height: 5rem;
+  background-color: gold;
+  float: left;
+  margin-right: 0.5rem;
+}
+.clear {
+  clear: both;
+}
+/*---FlexBox------------------------------------------------------------------------------*/
+.container {
+  border: 3px solid grey;
+  display: flex;
+  flex-direction: row;
+  justify-content: center; /*alignment within line*/
+  align-items: center; /*center of box*/
+  /*  flex-wrap: wrap; for multiple items which needs tobe wrapped*/
+  /* align-content: center; for multiple line content*/
+  height: 20vh;
+}
+.boxi {
+  flex-basis: 8rem;
+  flex-grow: 1;
+  flex-shrink: 1;
+  flex: 1 1 8rem; /* 1 in 3 */
+  width: 5rem;
+  height: 5rem;
+  background-color: gold;
+  margin: 1rem;
+}
+.boxi1 {
+  flex-shrink: 0;
+  /*align-self: flex-start;*/
+  /*flex-basis:5rem ; */
+  /* flex-grow: 2; */
+}
+
+/*---Grid------------------------------------------------------------------------------*/
+.containergrid {
+  display: grid; /* 3x2 */
+  /*grid-template-rows:repeat(3,100px);
+    grid-template-columns: repeat(2,100px);*/
+  /* grid-template: repeat(3,100px)/100px 30fr 70fr;*/
+  grid-template: 100px auto 100px/30fr 70fr;
+  grid-template-areas:
+    "header header"
+    "sidebar main"
+    ".       footer";
+
+  border: 3px solid grey;
+  /*row-gap: 10px;
+    column-gap: 10px;*/
+  gap: 10px;
+  /*justify-items:stretch;
+    align-items: stretch;*/
+  /*justify-content: center;*/
+  height: 100vh;
+}
+.boxs {
+  /* width: 5rem; 
+    height: 5rem; */
+  background: gold;
+}
+.boxs1 {
+  grid-column: 1 / span 2;
+  grid-area: header;
+}
+.boxs4 {
+  grid-area: footer;
+}
+.boxs2 {
+  display: none;
+  /* or visibility: hidden;*/
+}
+
+/*---Media-Queries------------------------------------------------------------------------------*/
+.containermedia {
+  display: flex;
+  flex-direction: column;
+}
+.bx {
+  background: gold;
+  padding: 1rem;
+}
+.bx:nth-of-type(2) {
+  background: dodgerblue;
+}
+@media screen and (min-width: 600px) and (max-width: 900px) {
+  .containermedia {
+    flex-direction: row;
+  }
+}
+@media screen and (min-width: 900px) {
+  .containermedia {
+    flex-direction: row;
+  }
+  .box {
+    background: white;
+  }
+}
+@media print {
+  body {
+    font-size: 12pt;
+  }
+  .box {
+    padding: 0.5cm;
+  }
+}

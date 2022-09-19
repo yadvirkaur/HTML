@@ -1,0 +1,99 @@
+/*CSS TRICKS .COM  */
+
+body {
+  margin: 10px;
+}
+p {
+  color: green;
+}
+
+#product ~ p {
+  /* >for direct child of selector, + for direct sibling, ~ for all siblings*/
+  color: blue;
+}
+
+a[href*="google"]  /* * for match something in link, ^ FOR start with, $ for ends with */ {
+  color: pink;
+}
+
+p:first-child {
+  /* sudo selector */
+  font-style: italic;
+}
+
+ul li:nth-child(odd) {
+  color: pink;
+}
+
+a:visited,
+a:link {
+  color: deeppink;
+}
+a:hover,
+a:focus {
+  color: green;
+}
+
+/*.first-letter{
+    font-size: 150%;
+    font-weight: bold;
+  } 
+  OR*/
+p::first-letter {
+  font-size: 150%;
+  font-weight: bold;
+}
+
+h1 {
+  color: aquamarine;
+}
+.highlight {
+  color: chocolate;
+}
+#product {
+  color: chartreuse;
+}
+.products #product {
+  color: cornflowerblue;
+}
+.box3 {
+  width: 100px;
+  height: 100px;
+  background: coral;
+  box-shadow: 0 0 30px grey;
+}
+h2 {
+  color: white;
+  text-shadow: 3px 3px 5px rgb(0, 0, 0, 0.2);
+}
+
+.box {
+  width: 100px;
+  height: 100px;
+  background-color: hsla(41, 79%, 52%, 0.5); /* google color picker*/
+  border: 5px dashed blue;
+  border-bottom: 5px solid green;
+  /* border-width: 10px 5px 10px; trb */
+  border-radius: 100px;
+}
+.box2 {
+  width: 100px;
+  height: 100px;
+  /* background:linear-gradient(45deg,yellow,blue 50%, red); */
+  /*background: radial-gradient(circle at top left , white, yellow);*/ /* google gradient generator*/
+  background: rgb(204, 194, 194);
+  background: linear-gradient(
+    30deg,
+    rgba(204, 194, 194, 1) 0%,
+    rgba(202, 104, 196, 1) 52%,
+    rgba(9, 9, 121, 1) 100%
+  );
+}
+
+.box1 {
+  width: 0;
+  height: 0;
+  border-bottom: 100px solid red;
+  border-left: 50px solid transparent;
+  border-right: 50px solid transparent;
+}

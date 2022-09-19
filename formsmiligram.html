@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="CSS/normalize.css.css" />
+    <link rel="stylesheet" href="CSS/formsmiligram.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/milligram/1.4.1/milligram.css"
+    />
+  </head>
+  <body>
+    <form action="https://formspree.io/f/mknegdog" method="POST">
+      <input
+        name="name"
+        type="text"
+        value="yad"
+        placeholder="type here"
+        maxlength="5"
+        autofocus
+      />
+
+      <!--------Data lists-------------------------------------->
+
+      <input
+        name="country selected"
+        type="text"
+        list="countries"
+        autocomplete="off"
+      />
+      <datalist id="countries">
+        <option data-value="1">Australia</option>
+        <option data-value="2">Canada</option>
+        <option data-value="3">India</option>
+        <option value="4">US</option>
+      </datalist>
+
+      <!---------Drop down-------------------------------------->
+      <select required>
+        <optgroup label="Front-end courses">
+          <option value="">None</option>
+          <option value="1">HTML</option>
+          <option value="2">CSS</option>
+          <option value="3">JS</option>
+        </optgroup>
+
+        <optgroup label="Back-end courses">
+          <option value="1">Node.js</option>
+          <option value="2">ASP.net</option>
+          <option value="3">Django</option>
+        </optgroup>
+      </select>
+
+      <!---------Check boxes-------------------------------------->
+      <div>
+        <input type="checkbox" id="front-end" />
+        <label class="label-inline" for="front-end">Front-end</label>
+      </div>
+      <div>
+        <input type="checkbox" id="back-end" checked />
+        <label class="label-inline" for="back-end">Back-end</label>
+      </div>
+
+      <!---------Radio button-------------------------------------->
+      <div>
+        <input type="radio" name="membership" id="silver" disabled />
+        <label for="silver" class="label-inline">Silver</label>
+      </div>
+
+      <div>
+        <input type="radio" name="membership" id="gold" />
+        <label for="gold" class="label-inline">Gold</label>
+      </div>
+
+      <!---------Sliders-------------------------------------->
+      <input type="range" min="0" max="100" value="80" />
+
+      <!---------File inputs-------------------------------------->
+      <input type="file" name="" id="" multiple accept=".jpg, .png" />
+      <input type="file" name="" id="" multiple accept="video/*" />
+
+      <!---------Grouping related fields-------------------------------------->
+      <fieldset>
+        <legend>Billing Address</legend>
+        <input type="text" name="" id="" />
+        <input type="text" name="" id="" />
+        <input type="text" name="" id="" />
+      </fieldset>
+
+      <section>
+        <h3>Shipping Address</h3>
+        <input type="text" name="" id="" />
+        <input type="text" name="" id="" />
+        <input type="text" name="" id="" />
+      </section>
+
+      <!---------Multiline text-------------------------------------->
+      <textarea name="" id="">Comment here...</textarea>
+
+      <!---------Data Validation-------------------------------------->
+      <input
+        type="text"
+        required
+        minlength="3"
+        maxlength="10"
+        placeholder="name"
+      />
+      <input type="email" maxlength="30" placeholder="email" />
+      <input type="number" min="0" max="5" />
+      <button type="submit">Submit</button>
+    </form>
+  </body>
+</html>

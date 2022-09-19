@@ -1,0 +1,39 @@
+/*img {
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
+  }*/
+/*.meal {
+  clip-path: polygon(
+    20% 0%,
+    80% 0%,
+    100% 20%,
+    100% 80%,
+    80% 100%,
+    20% 100%,
+    0% 80%,
+    0% 20%
+  );
+}*/
+
+.meal {
+  width: ;
+}
+.meal:hover {
+  filter: grayscale(70%) blur(2px);
+}
+
+body {
+  /* background: url(/images/bg-sanfrancisco.jpg);*/
+  background-repeat: no-repeat;
+  /* background-position: 100px 100px;*/
+  background-size: cover;
+  background-attachment: fixed;
+  height: 300vh;
+  background: url(/images/constellation.svg);
+}
+/*when applying svg backgrounds no need for repeat or size attributes.*/
+.icon {
+  font-size: 2rem;
+  color: aliceblue;
+}
